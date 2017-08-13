@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>"></meta>
+    <link rel="stylesheet" href="/public/stylesheets/index.css" />
+  </head>
+  <body>
+    <p class="hello-world">Hello world!</p>
+
+    <div>
+      <%= params.hoge %>
+    </div>
+
+    <ul>
+      <%# for 文 %>
+      <% for (var i = 0; i < 3; i++) { %>
+        <li>
+          <%= params.fuga %>
+        </li>
+      <% } %>
+    </ul>
+
+    <%# for each 文 %>
+    <% var ary = ['アイテム1', 'アイテム2', 'アイテム3']; %>
+    <% for (var key in ary) { %>
+      <%# if 文 %>
+      <% if (key === "0") { %>
+        <p style="color:red;"><%= ary[key] %></p>
+      <% } else if (key === 1 ) { %>
+        <p style="color:green;"><%= ary[key] %></p>
+      <% } else { %>
+        <p style="color:blue;"><%= ary[key] %></p>
+      <% } %>
+    <% } %>
+    <% for (var item of ary) { %>
+      <p style="display:inline-block; padding-bottom:100px;"><%= item %></p>
+    <% } %>
+
+    <script type="text/javascript" src="/public/javascripts/index.js"></script>
+  </body>
+</html>
